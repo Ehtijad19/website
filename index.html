@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Saima Jahangir</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Caveat:wght@400;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background with particles, hearts, balloons, and confetti -->
+    <div class="background-elements" id="background-elements"></div>
+    
+    <!-- Birthday Cake Animation -->
+    <div class="birthday-cake" id="birthday-cake">
+        <div class="cake-layer cake-bottom"></div>
+        <div class="cake-layer cake-middle"></div>
+        <div class="cake-layer cake-top"></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+    </div>
+    
+    <!-- Color Theme Selector -->
+    <div class="theme-selector">
+        <div class="theme-btn purple active" onclick="changeTheme('default')" title="Purple Dream"></div>
+        <div class="theme-btn ocean" onclick="changeTheme('ocean')" title="Ocean Blue"></div>
+        <div class="theme-btn sunset" onclick="changeTheme('sunset')" title="Sunset Glow"></div>
+        <div class="theme-btn forest" onclick="changeTheme('forest')" title="Forest Green"></div>
+        <div class="theme-btn galaxy" onclick="changeTheme('galaxy')" title="Galaxy Night"></div>
+    </div>
+    
+    <!-- Animation Control Button -->
+    <div class="animation-control" onclick="toggleAnimations()">
+        <i class="fas fa-pause" id="animation-icon"></i>
+    </div>
+    
+    <div class="container">
+        <!-- Welcome Page -->
+        <section id="index" class="section active">
+            <h1>🎉 Happy Birthday Saima Jahangir 🎉</h1>
+            <p><span id="welcome-text"></span></p>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-title">Countdown to Saima's Birthday!</div>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="birthday-banner">
+                🎂 Born on February 25, 2005 🎂
+            </div>
+            <div class="age-badge">
+                Celebrating 19 Amazing Years! 🌟
+            </div>
+            
+            <!-- Social Sharing -->
+            <div class="social-sharing">
+                <div class="social-btn social-facebook" onclick="shareOnSocial('facebook')">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="social-btn social-twitter" onclick="shareOnSocial('twitter')">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="social-btn social-instagram" onclick="shareOnSocial('instagram')">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="social-btn social-whatsapp" onclick="shareOnSocial('whatsapp')">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="social-btn social-link" onclick="copyLink()">
+                    <i class="fas fa-link"></i>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="showSection('message')">Start Your Journey</button>
+        </section>
+
+        <!-- Birthday Message Page -->
+        <section id="message" class="section">
+            <h1>🌟 A Special Message For Saima 🌟</h1>
+            <p><span id="message-text"></span></p>
+            <button class="btn" onclick="showSection('memories')">Next →</button>
+        </section>
+
+        <!-- Memories / Gallery Page -->
+        <section id="memories" class="section">
+            <h1>📸 Saima's Beautiful Moments</h1>
+            <p><span id="memories-text"></span></p>
+            
+            <div class="gallery">
+                <div class="memory-card">
+                    <img src="https://i.ibb.co/M52Ztz2V/1693714295444.jpg" alt="Memory 1">
+                    <div class="overlay">
+                        <div class="overlay-text">Saima's contagious joy!</div>
+                    </div>
+                    <div class="caption">
+                        <h3>That time we laughed until we cried!</h3>
+                        <p>Saima's laughter is truly infectious and brings joy to everyone around.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <img src="https://i.ibb.co/Ftjw4KM/IMG-20251015-WA0003.jpg" alt="Memory 2">
+                    <div class="overlay">
+                        <div class="overlay-text">Adventures with Saima!</div>
+                    </div>
+                    <div class="caption">
+                        <h3>Adventures we'll never forget!</h3>
+                        <p>Every moment with Saima is special and creates lasting memories.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <img src="https://i.ibb.co/PGwWz6Zt/sa.jpg" alt="Memory 3">
+                    <div class="overlay">
+                        <div class="overlay-text">Celebrating Saima!</div>
+                    </div>
+                    <div class="caption">
+                        <h3>Celebrating life's little victories!</h3>
+                        <p>Saima inspires everyone around with incredible positivity and strength.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <img src="https://i.ibb.co/5g0FWV1p/saim.jpg" alt="Memory 4">
+                    <div class="overlay">
+                        <div class="overlay-text">Saima's beautiful smile!</div>
+                    </div>
+                    <div class="caption">
+                        <h3>Your smile brightens even the darkest days.</h3>
+                        <p>Saima's kindness and warmth are truly special gifts to the world.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <img src="https://i.ibb.co/dsQy8VkH/sai.jpg" alt="Memory 5">
+                    <div class="overlay">
+                        <div class="overlay-text">Making memories with Saima!</div>
+                    </div>
+                    <div class="caption">
+                        <h3>Making memories that will last a lifetime.</h3>
+                        <p>These moments with Saima are treasures we'll cherish forever.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <img src="https://i.ibb.co/4wtdCnTW/IMG-20251015-WA0004.jpg" alt="Memory 6">
+                    <div class="overlay">
+                        <div class="overlay-text">More adventures with Saima!</div>
+                    </div>
+                    <div class="caption">
+                        <h3>Here's to many more adventures together!</h3>
+                        <p>Looking forward to all the future memories we'll create with Saima.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="showSection('gifts')">Open Virtual Gifts →</button>
+        </section>
+
+        <!-- Virtual Gifts Page -->
+        <section id="gifts" class="section">
+            <h1>🎁 Special Gifts For Saima</h1>
+            <p><span id="gifts-text"></span></p>
+            
+            <div class="gift-container">
+                <div class="gift-box" onclick="openGift(this, 0)">
+                    <div class="gift-box-face gift-box-front">
+                        <div class="gift-box-icon">🎁</div>
+                        <div>Click to Open</div>
+                    </div>
+                    <div class="gift-box-face gift-box-back">
+                        <div class="gift-box-title">A Year of Joy</div>
+                        <div class="gift-box-message">May this year bring you endless joy and happiness!</div>
+                    </div>
+                </div>
+                <div class="gift-box" onclick="openGift(this, 1)">
+                    <div class="gift-box-face gift-box-front">
+                        <div class="gift-box-icon">🎁</div>
+                        <div>Click to Open</div>
+                    </div>
+                    <div class="gift-box-face gift-box-back">
+                        <div class="gift-box-title">Dreams Come True</div>
+                        <div class="gift-box-message">May all your dreams and wishes come true this year!</div>
+                    </div>
+                </div>
+                <div class="gift-box" onclick="openGift(this, 2)">
+                    <div class="gift-box-face gift-box-front">
+                        <div class="gift-box-icon">🎁</div>
+                        <div>Click to Open</div>
+                    </div>
+                    <div class="gift-box-face gift-box-back">
+                        <div class="gift-box-title">Endless Adventures</div>
+                        <div class="gift-box-message">May your life be filled with exciting adventures!</div>
+                    </div>
+                </div>
+                <div class="gift-box" onclick="openGift(this, 3)">
+                    <div class="gift-box-face gift-box-front">
+                        <div class="gift-box-icon">🎁</div>
+                        <div>Click to Open</div>
+                    </div>
+                    <div class="gift-box-face gift-box-back">
+                        <div class="gift-box-title">Love & Friendship</div>
+                        <div class="gift-box-message">May you always be surrounded by love and friendship!</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="showSection('interactive-cake')">Blow Out Candles →</button>
+        </section>
+
+        <!-- Interactive Cake Page -->
+        <section id="interactive-cake" class="section">
+            <h1>🎂 Make A Wish And Blow Out The Candles!</h1>
+            <p><span id="interactive-cake-text"></span></p>
+            
+            <div class="interactive-cake">
+                <div class="interactive-cake-layer interactive-cake-bottom"></div>
+                <div class="interactive-cake-layer interactive-cake-middle"></div>
+                <div class="interactive-cake-layer interactive-cake-top"></div>
+                <div class="interactive-candle"><div class="interactive-flame" onclick="extinguishFlame(this)"></div></div>
+                <div class="interactive-candle"><div class="interactive-flame" onclick="extinguishFlame(this)"></div></div>
+                <div class="interactive-candle"><div class="interactive-flame" onclick="extinguishFlame(this)"></div></div>
+            </div>
+            
+            <div class="cake-message" id="cake-message">Click on each flame to blow out the candles!</div>
+            
+            <button class="btn" id="cake-next-btn" style="display: none;" onclick="showSection('scrapbook')">View Scrapbook →</button>
+        </section>
+
+        <!-- Scrapbook Page -->
+        <section id="scrapbook" class="section">
+            <h1>📔 Saima's Digital Scrapbook</h1>
+            <p><span id="scrapbook-text"></span></p>
+            
+            <div class="scrapbook">
+                <div class="scrapbook-title">Memories We Cherish</div>
+                <div class="scrapbook-pages">
+                    <div class="scrapbook-page">
+                        <img src="https://i.ibb.co/M52Ztz2V/1693714295444.jpg" alt="Memory 1">
+                        <div class="scrapbook-page-title">Joyful Moments</div>
+                        <div class="scrapbook-page-text">Remember when we couldn't stop laughing? Those moments are priceless!</div>
+                        <div class="scrapbook-sticker">😂</div>
+                    </div>
+                    <div class="scrapbook-page">
+                        <img src="https://i.ibb.co/Ftjw4KM/IMG-20251015-WA0003.jpg" alt="Memory 2">
+                        <div class="scrapbook-page-title">Adventures Together</div>
+                        <div class="scrapbook-page-text">Every adventure with you is a story worth telling!</div>
+                        <div class="scrapbook-sticker">🌟</div>
+                    </div>
+                    <div class="scrapbook-page">
+                        <img src="https://i.ibb.co/PGwWz6Zt/sa.jpg" alt="Memory 3">
+                        <div class="scrapbook-page-title">Celebrating You</div>
+                        <div class="scrapbook-page-text">Your achievements inspire everyone around you!</div>
+                        <div class="scrapbook-sticker">🎉</div>
+                    </div>
+                    <div class="scrapbook-page">
+                        <img src="https://i.ibb.co/5g0FWV1p/saim.jpg" alt="Memory 4">
+                        <div class="scrapbook-page-title">Beautiful Smile</div>
+                        <div class="scrapbook-page-text">Your smile can light up the darkest days!</div>
+                        <div class="scrapbook-sticker">💖</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="showSection('photobooth')">Photo Booth Fun →</button>
+        </section>
+
+        <!-- Photo Booth Page -->
+        <section id="photobooth" class="section">
+            <h1>📸 Birthday Photo Booth</h1>
+            <p><span id="photobooth-text"></span></p>
+            
+            <div class="photo-booth">
+                <div class="photo-booth-title">Take a Birthday Picture!</div>
+                
+                <!-- Photo Gallery with Memories Images -->
+                <div class="photo-gallery">
+                    <div class="photo-gallery-item" onclick="selectPhotoForFrame(0)">
+                        <img src="https://i.ibb.co/M52Ztz2V/1693714295444.jpg" alt="Memory 1">
+                        <div class="photo-gallery-overlay">Saima's contagious joy!</div>
+                    </div>
+                    <div class="photo-gallery-item" onclick="selectPhotoForFrame(1)">
+                        <img src="https://i.ibb.co/Ftjw4KM/IMG-20251015-WA0003.jpg" alt="Memory 2">
+                        <div class="photo-gallery-overlay">Adventures with Saima!</div>
+                    </div>
+                    <div class="photo-gallery-item" onclick="selectPhotoForFrame(2)">
+                        <img src="https://i.ibb.co/PGwWz6Zt/sa.jpg" alt="Memory 3">
+                        <div class="photo-gallery-overlay">Celebrating Saima!</div>
+                    </div>
+                    <div class="photo-gallery-item" onclick="selectPhotoForFrame(3)">
+                        <img src="https://i.ibb.co/5g0FWV1p/saim.jpg" alt="Memory 4">
+                        <div class="photo-gallery-overlay">Saima's beautiful smile!</div>
+                    </div>
+                    <div class="photo-gallery-item" onclick="selectPhotoForFrame(4)">
+                        <img src="https://i.ibb.co/dsQy8VkH/sai.jpg" alt="Memory 5">
+                        <div class="photo-gallery-overlay">Making memories with Saima!</div>
+                    </div>
+                    <div class="photo-gallery-item" onclick="selectPhotoForFrame(5)">
+                        <img src="https://i.ibb.co/4wtdCnTW/IMG-20251015-WA0004.jpg" alt="Memory 6">
+                        <div class="photo-gallery-overlay">More adventures with Saima!</div>
+                    </div>
+                </div>
+                
+                <div class="photo-booth-camera">
+                    <video class="photo-booth-video" id="camera-video" autoplay></video>
+                    <div class="photo-booth-frame" id="selected-frame">
+                        <img src="https://i.ibb.co/6yFm2K5L/frame1.png" alt="Frame">
+                    </div>
+                </div>
+                
+                <div class="photo-booth-controls">
+                    <button class="photo-booth-btn" id="start-camera" onclick="startCamera()">Start Camera</button>
+                    <button class="photo-booth-btn" id="take-photo" style="display: none;" onclick="takePhoto()">Take Photo</button>
+                    <button class="photo-booth-btn" id="retake-photo" style="display: none;" onclick="retakePhoto()">Retake</button>
+                </div>
+                
+                <div class="photo-booth-frames">
+                    <div class="photo-booth-frame-option active" onclick="selectFrame(0)">
+                        <img src="https://i.ibb.co/6yFm2K5L/frame1.png" alt="Frame 1">
+                    </div>
+                    <div class="photo-booth-frame-option" onclick="selectFrame(1)">
+                        <img src="https://i.ibb.co/2P2sC6Kg/frame2.png" alt="Frame 2">
+                    </div>
+                    <div class="photo-booth-frame-option" onclick="selectFrame(2)">
+                        <img src="https://i.ibb.co/9bH8zW3f/frame3.png" alt="Frame 3">
+                    </div>
+                    <div class="photo-booth-frame-option" onclick="selectFrame(3)">
+                        <img src="https://i.ibb.co/T1hLk1QG/frame4.png" alt="Frame 4">
+                    </div>
+                </div>
+                
+                <div class="photo-booth-result" id="photo-result">
+                    <img id="captured-photo" alt="Captured Photo">
+                    <div class="photo-booth-result-actions">
+                        <button class="photo-booth-btn" onclick="downloadPhoto()">Download</button>
+                        <button class="photo-booth-btn" onclick="sharePhoto()">Share</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="showSection('wishes-generator')">Generate Wishes →</button>
+        </section>
+
+        <!-- Wishes Generator Page -->
+        <section id="wishes-generator" class="section">
+            <h1>🎊 Birthday Wishes Generator</h1>
+            <p><span id="wishes-generator-text"></span></p>
+            
+            <div class="wishes-generator">
+                <div class="wishes-generator-title">Generate Special Birthday Wishes For Saima</div>
+                
+                <div class="wishes-categories">
+                    <div class="wishes-category active" onclick="selectWishCategory('heartfelt')">Heartfelt</div>
+                    <div class="wishes-category" onclick="selectWishCategory('funny')">Funny</div>
+                    <div class="wishes-category" onclick="selectWishCategory('inspirational')">Inspirational</div>
+                    <div class="wishes-category" onclick="selectWishCategory('poetic')">Poetic</div>
+                </div>
+                
+                <div class="wishes-display">
+                    <div class="wishes-text" id="generated-wish">Click "Generate Wish" to create a special birthday wish for Saima!</div>
+                </div>
+                
+                <div class="wishes-actions">
+                    <button class="btn" onclick="generateWish()">Generate Wish</button>
+                    <button class="btn" onclick="copyWish()">Copy Wish</button>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="showSection('guestbook')">Sign Guestbook →</button>
+        </section>
+
+        <!-- Guestbook Page -->
+        <section id="guestbook" class="section">
+            <h1>📝 Birthday Guestbook</h1>
+            <p><span id="guestbook-text"></span></p>
+            
+            <div class="guestbook">
+                <div class="guestbook-title">Leave a Birthday Message for Saima</div>
+                
+                <div class="guestbook-form">
+                    <input type="text" class="guestbook-input" id="guest-name" placeholder="Your Name">
+                    <textarea class="guestbook-textarea" id="guest-message" placeholder="Your Birthday Message for Saima"></textarea>
+                    <button class="btn" onclick="addGuestMessage()">Add Message</button>
+                </div>
+                
+                <div class="guestbook-messages" id="guestbook-messages">
+                    <div class="guestbook-message">
+                        <div class="guestbook-message-header">
+                            <div class="guestbook-message-name">Birthday Well-Wisher</div>
+                            <div class="guestbook-message-date">Just now</div>
+                        </div>
+                        <div class="guestbook-message-text">Happy Birthday Saima! May your special day be filled with joy, laughter, and wonderful memories!</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="showSection('quiz')">Play Birthday Quiz →</button>
+        </section>
+
+        <!-- Birthday Quiz Game -->
+        <section id="quiz" class="section">
+            <h1>🎮 Saima's Birthday Quiz Challenge</h1>
+            <p><span id="quiz-text"></span></p>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" id="quiz-question">Loading question...</div>
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+                <div class="quiz-score" id="quiz-score">Score: 0/0</div>
+                <button class="btn quiz-next-btn" id="quiz-next-btn" onclick="nextQuestion()">Next Question →</button>
+                <button class="btn" id="quiz-finish-btn" style="display: none;" onclick="showSection('game')">Play Memory Game →</button>
+            </div>
+        </section>
+
+        <!-- Mini Game Page -->
+        <section id="game" class="section">
+            <h1>🕹️ Memory Match Game — Play to Unlock Saima's Next Surprise</h1>
+            <p><span id="game-text"></span></p>
+            
+            <div class="game-container" id="game-container">
+                <!-- Game cards will be generated by JavaScript -->
+            </div>
+            
+            <button class="btn" id="game-next-btn" style="display: none;" onclick="showSection('letter')">Reveal Letter →</button>
+        </section>
+
+        <!-- Heartfelt Letter Page -->
+        <section id="letter" class="section">
+            <h1>💌 A Letter From Heart to Saima</h1>
+            
+            <div class="letter">
+                <div class="typing-text" id="typing-text">
+                    <span id="typed-text"></span>
+                    <span class="typing-cursor" id="cursor"></span>
+                </div>
+            </div>
+            
+            <button class="btn" id="letter-next-btn" style="display: none;" onclick="showSection('wishes')">Next Surprise →</button>
+        </section>
+
+        <!-- Final Wishes Page -->
+        <section id="wishes" class="section">
+            <h1>🌈 Wishing Saima the Best Year Ahead</h1>
+            <p><span id="wishes-text"></span></p>
+            
+            <div class="wishes">
+                <div class="wish-item">
+                    <i class="fas fa-star"></i>
+                    <p>May all your dreams come true, Saima</p>
+                </div>
+                <div class="wish-item">
+                    <i class="fas fa-heart"></i>
+                    <p>May love surround you always, Saima</p>
+                </div>
+                <div class="wish-item">
+                    <i class="fas fa-smile"></i>
+                    <p>May happiness find you at every turn, Saima</p>
+                </div>
+                <div class="wish-item">
+                    <i class="fas fa-gift"></i>
+                    <p>May life surprise you with wonderful gifts, Saima</p>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="showSection('thankyou')">Final Page →</button>
+        </section>
+
+        <!-- Thank-You Page -->
+        <section id="thankyou" class="section">
+            <h1>❤️ Thank You for Visiting, Saima</h1>
+            <p><span id="thankyou-text"></span></p>
+            <div class="birthday-banner">
+                🎉 Happy 19th Birthday, Saima! 🎉
+            </div>
+            <footer>
+                Made with <i class="fas fa-heart"></i> for Saima Jahangir.
+            </footer>
+        </section>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggle" id="chatbot-toggle" onclick="toggleChatbot()">
+        <i class="fas fa-comments"></i>
+    </div>
+    
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <h3>SJchat</h3>
+            <button class="chatbot-close" onclick="toggleChatbot()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot">Hi! I'm SJchat, Saima's birthday assistant. How can I help you today?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type your message..." onkeypress="handleChatInput(event)">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
