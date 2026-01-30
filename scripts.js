@@ -34,13 +34,13 @@ let quizAnswered = false;
 // Wishes Generator Data
 const wishesCategories = {
     heartfelt: [
-        "May your 19th birthday be as wonderful as you are, Saima. You deserve all the happiness in the world!",
+        "May your 21th birthday be as wonderful as you are, Saima. You deserve all the happiness in the world!",
         "On your special day, I want you to know how much you're loved and appreciated. Happy Birthday, Saima!",
         "Saima, may this year bring you closer to your dreams and fill your life with endless joy.",
         "Happy Birthday to someone who makes the world a brighter place just by being in it. You're amazing, Saima!"
     ],
     funny: [
-        "Happy 19th Birthday, Saima! Don't worry, you're not getting older, you're just leveling up!",
+        "Happy 21th Birthday, Saima! Don't worry, you're not getting older, you're just leveling up!",
         "Congratulations on reaching level 19, Saima! May your new skills include cake-eating and present-opening!",
         "Happy Birthday, Saima! Remember, age is just a number... a really high number in your case!",
         "Saima, you're not old, you're just vintage! Happy 19th Birthday!"
@@ -52,7 +52,7 @@ const wishesCategories = {
         "Happy Birthday, Saima! May you always have the courage to follow your heart and chase your dreams."
     ],
     poetic: [
-        "Like a flower in bloom, you grow more beautiful with each passing year. Happy 19th Birthday, Saima.",
+        "Like a flower in bloom, you grow more beautiful with each passing year. Happy 21th Birthday, Saima.",
         "May your life be painted with the colors of joy, love, and laughter. Happy Birthday, Saima.",
         "On this special day, may your heart be filled with sunshine and your path lined with roses. Happy Birthday, Saima.",
         "Like a star in the night sky, you shine bright. May your 19th year be as luminous as you are, Saima."
@@ -626,7 +626,7 @@ function showSection(sectionId) {
             typeText('wishes-text', "May Saima's future be bright, peaceful, and filled with success. You deserve everything beautiful in life.");
             break;
         case 'thankyou':
-            typeText('thankyou-text', "I hope this little website made Saima's 19th birthday special. Wishing you joy, love, and endless blessings for the year ahead.");
+            typeText('thankyou-text', "I hope this little website made Saima's 21th birthday special. Wishing you joy, love, and endless blessings for the year ahead.");
             break;
     }
 }
@@ -995,4 +995,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start countdown timer
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
 });
